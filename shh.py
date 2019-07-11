@@ -93,7 +93,7 @@ if __name__ == '__main__':
         # u_password
     )
 
-    incident = c.resource(api_path='/table/credential')
+    incident = c.resource(api_path='/table/u_credential')
 
     response = incident.get(query=qb)
 
