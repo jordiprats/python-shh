@@ -88,12 +88,12 @@ if __name__ == '__main__':
     # Query incident records with number starting with 'INC0123', created between 60 days ago and today.
     qb = (
         pysnow.QueryBuilder()
-        .field('u_system').contains('ar-prod-por01')
+        .field('u_system').contains('demo')
         # u_system
         # u_password
     )
 
-    incident = c.resource(api_path='/table/u_credential')
+    incident = c.resource(api_path='/table/whatever')
 
     response = incident.get(query=qb)
 
