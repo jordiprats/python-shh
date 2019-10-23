@@ -88,15 +88,14 @@ if __name__ == '__main__':
     # Query incident records with number starting with 'INC0123', created between 60 days ago and today.
     qb = (
         pysnow.QueryBuilder()
-        .field('u_system').contains('demo')
+        .field('name').contains('test')
         # u_system
         # u_password
     )
 
-    incident = c.resource(api_path='/table/whatever')
-
-    response = incident.get(query=qb)
+    servers = c.resource(api_path='/table/server')
+    response = servers.get(query=qb)
 
     # Iterate over the matching records and print out number
     for record in response.all():
-        print(record['u_system'])
+        print(record)
